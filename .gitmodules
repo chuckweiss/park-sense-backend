@@ -1,0 +1,9 @@
+[submodule "react-node-app/react-node-app/capstone-frontend"]
+	path = react-node-app/react-node-app/capstone-frontend
+	url = https://github.com/chuckweiss/capstone-frontend.git
+[submodule "react-node-app/--force"]
+	path = react-node-app/--force
+	url = https://github.com/chuckweiss/capstone-frontend.git
+[submodule "react-node-app/capstone-frontend"]
+	path = react-node-app/capstone-frontend
+	url = https://github.com/chuckweiss/capstone-frontend.git
