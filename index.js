@@ -1,5 +1,4 @@
 const express = require("express");
-const mysql = require("mysql");
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const app = express();
 
