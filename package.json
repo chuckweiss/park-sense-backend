@@ -1,0 +1,24 @@
+{
+  "name": "capstone-backend",
+  "version": "1.0.0",
+  "description": "Backend for capstone project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chuckweiss/capstone-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chuckweiss/capstone-backend/issues"
+  },
+  "homepage": "https://github.com/chuckweiss/capstone-backend#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongodb": "^4.5.0",
+    "mysql": "^2.18.1"
+  }
+}
