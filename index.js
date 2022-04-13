@@ -2,11 +2,7 @@ const express = require("express");
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const app = express();
 
-const inventory = require("./src/inventory");
-const profiles = require("./src/profiles");
-const orders = require("./src/orders");
-
-const PORT = 5000;
+const PORT = 5001;
 
 app.use(express.json());
 
@@ -32,11 +28,18 @@ const main = async () => {
   await client.connect();
   console.log("Connected successfully to server");
   const db = client.db(database);
-  const inv = db.collection("inventory");
 
-  inventory(app, inv);
-  profiles(app, db.collection("profiles"));
-  orders(app, db.collection("orders"));
+  app.get("/api/", async (req, res) => {
+    const data = await db.listCollections().toArray();
+    res.json(data.map((collection) => collection.name));
+  });
+
+  app.get("/api/:name", async (req, res) => {
+    const name = req.params.name;
+    const collection = db.collection(name);
+    const lot = await collection.find({}).toArray();
+    res.json(lot);
+  });
 };
 
 main().then(console.log).catch(console.error);
